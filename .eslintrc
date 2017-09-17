@@ -1,0 +1,21 @@
+{
+  "env": {
+    "browser": true,
+    "jest/globals": true
+  },
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "plugins": [
+    "jest"
+  ],
+  "settings": {
+    "import/resolver": "webpack",
+    "import/parser": "babel-eslint"
+  },
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx"] }
+    ]
+  }
+}
