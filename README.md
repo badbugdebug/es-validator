@@ -20,6 +20,8 @@ https://momentjs.com/
 - 자바스크립트 es 2015+ 와 React 를 모두 지원합니다. React 환경이 아닌 곳에서도 사용할 수 있습니다.
 - 일반적인 React Validator 는 기존 HTML 을 사용할 수 없거나 제약조건이 많습니다. 하지만 es-validator 는 HTML 소스를 그대로 변형하지 않고 사용할 수 있습니다.
 
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/H0I14SS8lKc/0.jpg)](https://youtu.be/H0I14SS8lKc)
+
 ### 지원하는 유효성 검증 규칙들
 
 ```
