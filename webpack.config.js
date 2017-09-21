@@ -3,6 +3,24 @@
  * @author Seok Kyun. Choi. 최석균 (Syaku)
  * @site http://syaku.tistory.com
  */
-const base = require('./webpack.base.config');
+const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-module.exports = env => (base(env));
+const merge = require('webpack-merge');
+
+const base = require('./webpack.base.config');
+const pkg = require('./package.json');
+const { port, publicPath, dist, src, entry, filename, externals } = pkg.config;
+
+module.exports = merge(base, {
+  externals,
+
+  plugins: [
+    new CleanWebpackPlugin([dist]),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production'),
+      },
+    }),
+  ],
+});

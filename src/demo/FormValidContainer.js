@@ -3,7 +3,7 @@
  * @site: http://syaku.tistory.com
  * @since: 2017. 9. 8.
  */
-
+/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import Toastr from 'modern-toastr';
