@@ -6,7 +6,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
 const propTypes = {
   children: PropTypes.node,
@@ -30,7 +29,7 @@ const Validation = (props) => {
     props.tagName,
     {
       ...attr,
-      className: classNames(className, { [errorClassName]: isValid }),
+      className: `${className} ${isValid ? errorClassName : ''}`,
     },
     children,
   );

@@ -10,6 +10,7 @@ import Toastr from 'modern-toastr';
 import 'modern-toastr/dist/modern-toastr.css';
 
 import Validator, { Validation, Message } from '../index';
+// import Validator, { Validation, Message } from 'es-validator';
 
 class FormValidContainer extends Component {
   constructor(props) {
@@ -158,7 +159,7 @@ class FormValidContainer extends Component {
         <h1>Form Value Validator</h1>
         <form>
           <Validation isValid={email.error}>
-            <label className="control-label" htmlFor="exampleInputEmail1">Email address</label>
+            <label className="control-label" htmlFor="email">Email address</label>
             <input
               type="email"
               className="form-control"
@@ -170,7 +171,7 @@ class FormValidContainer extends Component {
             <Message once valid={email} render={this.errorPrint} />
           </Validation>
           <div className={classNames('form-group', { 'has-error': email.error, 'has-feedback': email.error })}>
-            <label className="control-label" htmlFor="exampleInputEmail1">Email address</label>
+            <label className="control-label" htmlFor="email">Email address</label>
             <input
               type="email"
               className="form-control"
@@ -180,15 +181,12 @@ class FormValidContainer extends Component {
               value={this.state.email}
             />
             {
-              email.error ? [
-                <span className="sr-only">(success)</span>,
-                <span className="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" />,
-              ] : null
+              email.error ? <span key="" className="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true" /> : null
             }
             <Message once valid={email} render={this.errorPrint} />
           </div>
           <Validation isValid={this.state.v.password.error}>
-            <label className="control-label" htmlFor="exampleInputPassword1">Password</label>
+            <label className="control-label" htmlFor="password">Password</label>
             <input
               type="password"
               className="form-control"
@@ -200,7 +198,7 @@ class FormValidContainer extends Component {
             <Message once valid={this.state.v.password} render={this.errorPrint} />
           </Validation>
           <div className="form-group">
-            <label className="control-label" htmlFor="exampleInputPassword1">Password Confirm</label>
+            <label className="control-label" htmlFor="password2">Password Confirm</label>
             <input
               type="password"
               className="form-control"
@@ -212,7 +210,7 @@ class FormValidContainer extends Component {
           </div>
           <Validation isValid={isCheck.error}>
             <div className="checkbox">
-              <label className="control-label" htmlFor>
+              <label className="control-label" htmlFor="isCheck">
                 <input
                   type="checkbox"
                   id="isCheck"
@@ -224,9 +222,9 @@ class FormValidContainer extends Component {
             <Message valid={isCheck} render={this.errorPrint} />
           </Validation>
           <Validation isValid={hobby.error}>
-            <label className="control-label" htmlFor>취미를 선택하세요.</label>
+            <label className="control-label" htmlFor=" ">취미를 선택하세요.</label>
             <div className="checkbox">
-              <label className="checkbox-inline" htmlFor>
+              <label className="checkbox-inline" htmlFor=" ">
                 <input
                   type="checkbox"
                   value="축구"
@@ -235,7 +233,7 @@ class FormValidContainer extends Component {
                   checked={this.state.hobby.includes('축구')}
                 /> 축구
               </label>
-              <label className="checkbox-inline" htmlFor>
+              <label className="checkbox-inline" htmlFor=" ">
                 <input
                   type="checkbox"
                   value="야구"
@@ -244,7 +242,7 @@ class FormValidContainer extends Component {
                   checked={this.state.hobby.includes('야구')}
                 /> 야구
               </label>
-              <label className="checkbox-inline" htmlFor>
+              <label className="checkbox-inline" htmlFor=" ">
                 <input
                   type="checkbox"
                   value="농구"
