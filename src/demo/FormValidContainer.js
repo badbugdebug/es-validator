@@ -9,6 +9,8 @@ import classNames from 'classnames';
 import Toastr from 'modern-toastr';
 import 'modern-toastr/dist/modern-toastr.css';
 
+import 'core-js/fn/array/includes';
+
 import Validator, { Validation, Message } from '../index';
 // import Validator, { Validation, Message } from 'es-validator';
 

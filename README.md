@@ -6,6 +6,8 @@
 
 그리고 시간적인 문제로 규칙을 검증하는 것은 오픈 소스를 사용하였습니다. 추후 변경하도록 하겠습니다.
 
+크롬, 파이어폭스, 사파리 그리고 IE 11 이상에서 테스트되었습니다.
+
 > 사용된 유효성 규칙 검증기  
 https://github.com/chriso/validator.js  
 https://github.com/skaterdav85/validatorjs  
@@ -55,6 +57,9 @@ _makeFunc : custom function
 ### install
 
 ```
+// required
+// moment react react-dom shortid validate.js validator
+
 $ npm install es-validator
 
 or 

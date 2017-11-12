@@ -23,8 +23,4 @@ module.exports = merge(base, {
     new webpack.HotModuleReplacementPlugin(),
   ],
 
-  devServer: {
-    port,
-    contentBase: dist,
-  },
 });
