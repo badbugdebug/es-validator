@@ -1,6 +1,6 @@
 {
   "name": "es-validator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Form value Validator",
   "author": "Syaku (최석균) <http://syaku.tistory.com>",
   "license": "MIT",
@@ -38,7 +38,7 @@
     "src": "src",
     "entry": "./src/index.js",
     "port": 8088,
-    "`externals`": {
+    "externals": {
       "react": {
         "root": "React",
         "commonjs2": "react",
@@ -50,15 +50,18 @@
         "commonjs2": "react-dom",
         "commonjs": "react-dom",
         "amd": "react-dom"
-      }
+      },
+      "moment": "moment",
+      "validate.js": "validate.js",
+      "validator": "validator"
     }
   },
   "scripts": {
     "test": "jest",
     "build:prod": "webpack --colors --progress",
     "serv:demo": "webpack-dev-server --config webpack.config.demo.js --devtool source-map --colors --progress -d",
-    "state:dev": "webpack --config webpack.state.config.js --colors --progress -d --profile --json > stats-dev.json",
-    "state:prod": "webpack --config webpack.state.config.js --colors --progress -p --profile --json > stats.json"
+    "state:dev": "webpack --config webpack.config.state.js --colors --progress -d --profile --json > stats-dev.json",
+    "state:prod": "webpack --config webpack.config.state.js --colors --progress -p --profile --json > stats.json"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
@@ -95,7 +98,6 @@
     "moment": "^2.19.2",
     "react": "16.0.0",
     "react-dom": "16.0.0",
-    "shortid": "^2.2.8",
     "style-loader": "^0.18.2",
     "stylelint": "7.12.0",
     "stylelint-config-standard": "^16.0.0",
@@ -109,13 +111,13 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
-    "prop-types": "^15.5.10"
+    "prop-types": "^15.5.10",
+    "shortid": "^2.2.8"
   },
   "peerDependencies": {
     "moment": "^2.18.1",
     "react": ">=15.6.1",
     "react-dom": ">=15.6.1",
-    "shortid": "^2.2.8",
     "validate.js": "^0.12.0",
     "validator": "^9.1.1"
   }

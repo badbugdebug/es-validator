@@ -58,7 +58,7 @@ _makeFunc : custom function
 
 ```
 // required
-// moment react react-dom shortid validate.js validator
+$ npm install react react-dom moment validate.js validator
 
 $ npm install es-validator
 
