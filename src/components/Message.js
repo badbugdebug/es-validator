@@ -3,15 +3,12 @@
  * @site: http://syaku.tistory.com
  * @since: 2017. 9. 8.
  */
-
-import React from 'react';
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
 
 const propTypes = {
   render: PropTypes.func.isRequired,
   valid: PropTypes.shape().isRequired,
-  tagName: PropTypes.string,
   once: PropTypes.bool,
 };
 
@@ -26,15 +23,11 @@ const Message = (props) => {
   const { error, ...assert } = valid;
   const message = Object.keys(assert).map(key => assert[key]).filter(f => f.error);
 
-  const Render = props.once ?
+  const Compnent = props.once ?
     render({ ...message[0], key: shortid.generate() }) :
     message.map(data => render({ ...data, key: shortid.generate() }));
 
-  return React.createElement(
-    props.tagName,
-    {},
-    Render,
-  );
+  return error ? Compnent : null;
 };
 
 Message.defaultProps = defaultProps;
